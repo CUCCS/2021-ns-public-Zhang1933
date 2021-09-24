@@ -1,0 +1,134 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            7f:00:12:e2:61:12:95:41:19:5f:ac:1a:60:00:00:00:12:e2:61
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = US, O = Microsoft Corporation, CN = Microsoft RSA TLS CA 02
+        Validity
+            Not Before: Jul  6 01:53:13 2021 GMT
+            Not After : Jan  6 01:53:13 2022 GMT
+        Subject: CN = www.bing.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:b0:a8:3b:dd:c1:80:9c:97:bb:b0:7a:22:03:57:
+                    5f:33:05:d7:1d:a0:c3:58:d9:07:43:57:4e:89:35:
+                    cc:55:28:d6:17:68:90:22:d7:2a:2d:6a:b0:80:cc:
+                    c1:f7:26:23:20:39:16:1e:ac:48:13:05:12:e8:6b:
+                    9e:b3:bd:97:7d:cc:c9:29:d8:cd:e6:4d:ff:82:d6:
+                    af:99:8e:12:56:7c:a2:4b:84:51:60:8a:14:77:02:
+                    9c:a9:00:3d:16:7d:6d:8a:6a:a3:bf:01:71:89:6c:
+                    51:dd:8a:22:5b:bb:48:1d:4c:15:d1:44:9d:d4:1c:
+                    d4:ab:db:42:16:0f:6a:f4:f1:1d:a2:4a:c8:d4:fc:
+                    28:1d:5f:b2:7b:80:ac:28:12:58:20:34:a2:2f:0c:
+                    4b:c6:18:30:07:a4:e6:52:16:b2:56:a4:53:02:24:
+                    c3:c9:8d:a5:ad:e3:48:c7:b9:e8:4d:53:55:a2:76:
+                    1b:a9:8c:ab:98:b1:1b:b0:85:7d:8d:be:43:ee:72:
+                    b3:dd:fe:7f:b7:f3:49:6a:77:b0:0a:f0:18:d5:e2:
+                    41:f0:12:fd:5c:94:10:c2:e2:c4:41:af:cb:38:18:
+                    bc:0e:34:f4:23:f1:29:3e:85:1c:01:73:6b:11:d4:
+                    0d:7c:22:8e:95:8b:49:08:44:04:0c:d0:70:0f:7d:
+                    68:19
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 46:A5:55:EB:75:FA:91:20:30:B5:A2:89:69:F4:F3:7D:
+                                11:2C:41:74:BE:FD:49:B8:85:AB:F2:FC:70:FE:6D:47
+                    Timestamp : Jul  6 02:03:17.739 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:46:02:21:00:C3:39:63:73:F9:09:72:CA:CA:99:8E:
+                                E1:56:08:9F:A7:A6:40:17:3D:36:6A:EE:0F:4A:4B:A9:
+                                B7:A7:98:92:29:02:21:00:D3:FE:68:7E:67:9C:68:79:
+                                DC:77:61:CB:46:05:C6:A4:06:31:93:EC:04:74:10:01:
+                                7E:83:D0:DA:E7:B5:05:A9
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 41:C8:CA:B1:DF:22:46:4A:10:C6:A1:3A:09:42:87:5E:
+                                4E:31:8B:1B:03:EB:EB:4B:C7:68:F0:90:62:96:06:F6
+                    Timestamp : Jul  6 02:03:17.688 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:52:16:31:6A:39:33:76:65:30:28:8E:99:
+                                F7:6F:43:AB:6A:5A:34:0B:D8:8A:36:33:17:8C:A4:57:
+                                05:37:25:91:02:20:7D:E2:DE:ED:42:CE:E1:18:F8:F9:
+                                6D:9E:45:22:B5:E5:58:3B:9A:4C:02:2C:0D:F5:CB:21:
+                                44:86:2E:00:36:3C
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 51:A3:B0:F5:FD:01:79:9C:56:6D:B8:37:78:8F:0C:A4:
+                                7A:CC:1B:27:CB:F7:9E:88:42:9A:0D:FE:D4:8B:05:E5
+                    Timestamp : Jul  6 02:03:18.025 2021 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:44:02:20:0B:F3:33:06:FB:BD:DE:30:63:E8:0A:BF:
+                                8A:48:D9:1E:8C:0D:FB:B6:32:3A:6A:46:A0:EA:16:FD:
+                                C1:79:2C:13:02:20:76:EE:EB:10:D7:73:6F:AC:63:AC:
+                                C6:61:73:85:4C:3A:FC:5D:BA:E4:93:E8:BE:3F:CB:19:
+                                B3:6D:D0:1A:B7:EB
+            1.3.6.1.4.1.311.21.10: 
+                0.0
+..+.......0
+..+.......
+            1.3.6.1.4.1.311.21.7: 
+                0/.'+.....7.....u...........a...`.]...A...P..d..'
+            Authority Information Access: 
+                CA Issuers - URI:http://www.microsoft.com/pki/mscorp/Microsoft%20RSA%20TLS%20CA%2002.crt
+                OCSP - URI:http://ocsp.msocsp.com
+
+            X509v3 Subject Key Identifier: 
+                20:41:A6:12:BD:A8:51:95:44:EC:90:2E:57:16:2B:B0:FC:CA:E0:07
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment, Data Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:www.bing.com, DNS:dict.bing.com.cn, DNS:*.platform.bing.com, DNS:*.bing.com, DNS:bing.com, DNS:ieonline.microsoft.com, DNS:*.windowssearch.com, DNS:cn.ieonline.microsoft.com, DNS:*.origin.bing.com, DNS:*.mm.bing.net, DNS:*.api.bing.com, DNS:ecn.dev.virtualearth.net, DNS:*.cn.bing.net, DNS:*.cn.bing.com, DNS:ssl-api.bing.com, DNS:ssl-api.bing.net, DNS:*.api.bing.net, DNS:*.bingapis.com, DNS:bingsandbox.com, DNS:feedback.microsoft.com, DNS:insertmedia.bing.office.net, DNS:r.bat.bing.com, DNS:*.r.bat.bing.com, DNS:*.dict.bing.com.cn, DNS:*.dict.bing.com, DNS:*.ssl.bing.com, DNS:*.appex.bing.com, DNS:*.platform.cn.bing.com, DNS:wp.m.bing.com, DNS:*.m.bing.com, DNS:global.bing.com, DNS:windowssearch.com, DNS:search.msn.com, DNS:*.bingsandbox.com, DNS:*.api.tiles.ditu.live.com, DNS:*.ditu.live.com, DNS:*.t0.tiles.ditu.live.com, DNS:*.t1.tiles.ditu.live.com, DNS:*.t2.tiles.ditu.live.com, DNS:*.t3.tiles.ditu.live.com, DNS:*.tiles.ditu.live.com, DNS:3d.live.com, DNS:api.search.live.com, DNS:beta.search.live.com, DNS:cnweb.search.live.com, DNS:dev.live.com, DNS:ditu.live.com, DNS:farecast.live.com, DNS:image.live.com, DNS:images.live.com, DNS:local.live.com.au, DNS:localsearch.live.com, DNS:ls4d.search.live.com, DNS:mail.live.com, DNS:mapindia.live.com, DNS:local.live.com, DNS:maps.live.com, DNS:maps.live.com.au, DNS:mindia.live.com, DNS:news.live.com, DNS:origin.cnweb.search.live.com, DNS:preview.local.live.com, DNS:search.live.com, DNS:test.maps.live.com, DNS:video.live.com, DNS:videos.live.com, DNS:virtualearth.live.com, DNS:wap.live.com, DNS:webmaster.live.com, DNS:webmasters.live.com, DNS:www.local.live.com.au, DNS:www.maps.live.com.au
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://mscrl.microsoft.com/pki/mscorp/crl/Microsoft%20RSA%20TLS%20CA%2002.crl
+                  URI:http://crl.microsoft.com/pki/mscorp/crl/Microsoft%20RSA%20TLS%20CA%2002.crl
+
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.311.42.1
+                  CPS: http://www.microsoft.com/pki/mscorp/cps
+                Policy: 2.23.140.1.2.1
+
+            X509v3 Authority Key Identifier: 
+                keyid:FF:2F:7F:E1:06:F4:38:F3:2D:ED:25:8D:98:C2:FE:0E:F6:6C:FC:FA
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+    Signature Algorithm: sha256WithRSAEncryption
+         d1:0a:d0:e8:b0:cb:97:f2:5f:96:78:b4:2d:c6:72:fc:7e:70:
+         22:fc:9b:72:bf:d0:10:0d:23:83:8f:7a:48:ac:65:4b:2a:ff:
+         fe:f6:b3:ca:27:6d:90:12:8b:85:65:55:21:3d:80:2e:45:1e:
+         81:e6:f4:1b:a2:a0:a4:2f:23:22:96:a6:65:86:96:4e:90:4a:
+         0a:45:70:6e:52:64:b0:84:ef:ed:cd:cf:05:2d:23:1c:26:1a:
+         b4:6d:cb:95:85:df:f8:f6:2b:ff:a1:a5:97:e5:ec:a7:89:3d:
+         34:5c:44:9c:10:30:02:51:81:3c:27:3e:65:b2:7b:90:50:61:
+         df:a1:4c:b6:23:68:1c:45:d9:46:99:84:aa:db:96:e9:ed:11:
+         e2:40:79:ad:4e:8a:10:34:89:76:27:10:f9:d2:27:7b:ac:c9:
+         23:71:2e:3a:a9:6c:2f:3b:85:b7:67:8e:6b:0d:28:d8:01:b5:
+         c2:ac:df:a4:06:a3:01:76:7b:bb:63:73:fa:3b:e6:24:7b:da:
+         88:b0:b2:69:e7:1a:ef:35:f1:24:8e:f0:69:55:2b:75:7a:d1:
+         0e:a2:cf:2b:76:6f:ca:27:89:90:da:da:25:a1:74:3f:80:e0:
+         35:2c:2e:e4:e4:a9:41:8b:1a:2e:e0:97:ec:35:f4:25:e4:c3:
+         3e:9d:11:d3:73:5a:0d:18:c9:52:6c:60:82:02:09:ae:61:d7:
+         de:9b:a1:f7:e0:d5:1b:62:d1:80:ec:5a:4b:c2:42:13:6f:be:
+         62:29:16:f5:a6:6f:cc:13:96:27:f9:1e:b8:10:38:00:a9:6c:
+         14:17:98:ce:cb:bc:57:62:bc:50:a7:31:40:96:40:ad:3d:fb:
+         d0:dd:84:ab:c0:63:b2:90:b9:ad:87:19:58:6b:14:a0:27:c5:
+         64:a0:e9:7a:90:4c:ab:7c:d8:ce:28:b5:95:32:65:d8:7b:53:
+         f1:21:33:bc:e0:5e:07:5f:01:37:a7:d4:0f:ff:8f:80:60:dd:
+         a4:42:f1:ed:a7:59:05:2f:8f:a6:d3:6d:67:15:53:4b:36:68:
+         4b:e5:10:5e:9c:71:8a:b3:73:ae:a2:95:9e:fb:84:c3:02:fe:
+         df:33:32:24:3a:39:38:1e:d8:1c:46:3c:47:bf:2e:dc:55:8c:
+         e1:c1:a4:d1:7a:61:06:b4:2e:dc:b2:f7:ac:64:e4:3b:44:e8:
+         e7:ab:ec:be:dd:81:ff:3f:88:1b:5d:c5:5e:30:35:f0:9d:be:
+         4c:40:79:65:d7:f1:40:05:19:f4:81:34:42:04:0c:5f:30:06:
+         15:89:c1:2a:ab:33:09:43:c8:2a:1d:32:f8:74:ec:3b:90:83:
+         75:5a:41:9e:7d:97:b9:d6
