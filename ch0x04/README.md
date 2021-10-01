@@ -208,3 +208,18 @@ send(arpspoofed)
 ## 参考资料：
 * [scapy 文档](https://scapy.readthedocs.io/en/latest/usage.html)
 * [ARP Cache Poisoning using Scapy - DataDrivenInvestor](https://medium.datadriveninvestor.com/arp-cache-poisoning-using-scapy-d6711ecbe112)
+
+## 4.5 习题
+1. 总结⼀下在交换式局域网环境中的网络攻防之术有哪些？
+攻击：
+对交换机的Dos攻击，投毒,对终端的投毒,来达到MITM,或者偷听的目的。
+
+防范：
+在交换机上抓包，检查交换机CMA表是否有异常。
+配置静态ip防止被投毒，加密防止被偷看。
+* 划分vlan
+* 启用并正确配置交换机的安全机制
+*  部署内网安全监控设备
+2. 如何理解“仅仅使用 VLAN 划分的⽅法是⽆法彻底解决 ARP 欺骗与攻击”问题？
+
+ARP欺骗本身是根据数据链路层的协议漏洞来利用,划分VLAN，你用的不还是原来的协议? 数据链路层的协议仍然没有改变,并未把真正需要补的"缺口"补上。
