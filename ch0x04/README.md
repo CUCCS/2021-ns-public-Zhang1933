@@ -46,6 +46,7 @@ pkt = promiscping("172.16.111.148")
 ```
 ![./img/promisping.png](./img/promisping.png)
 可以看到，没有返回结果
+
 **3.手动开启该网卡的「混杂模式」**
 ![./img/victimpromiscon.png](./img/victimpromiscon.png)
 
@@ -81,7 +82,7 @@ def promiscping(net, timeout=2, fake_bcast="ff:ff:ff:ff:ff:fe", **kargs):
 **手动关闭该网卡的「混杂模式」**
 
 ```bash
-sudo ip link set enp0s3 promisc off
+sudo ip link set eth0 promisc off
 ```
 ## 实验二：手工单步“毒化”目标主机的 ARP 缓存
 实验目的：将受害者主机上ARP 缓存网关的 MAC 地址「替换」为攻击者主机的 MAC 地址
@@ -166,6 +167,9 @@ sendp 依旧纹丝不动
 
 ## 基于 scapy 编写 ARP 投毒劫持工具
 还是直接自己干个工具把，就不使用自动化工具了。不是很复杂，把手动实现的自动化就行。
+
+该脚本自动将网段上的所输入的目的终端的ARP表中网关的mac地址毒化为使用此脚本的主机的mac地址。
+
 ```python
 import sys 
 from scapy.all import srp,send,Ether,ARP,conf
