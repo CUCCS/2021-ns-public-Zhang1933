@@ -379,15 +379,20 @@ def TCPNull(ip,port):
 * 没有回应，过滤或者开放
 
 **返回的open|filtered状态仍然含糊不清，但nmap的workaroud：**
+
 nmap还会根据特殊协议构造数据包，而不是简单构造空payload:
 
 > open ports rarely respond to empty probes. Those ports for which Nmap has a protocol-specific payload are more likely to get a response and be marked open
+
 >To send the proper packet for every popular UDP service, Nmap would need a large database defining their probe formats. Fortunately, Nmap has that in the form of nmap-service-probes, which is part of the service and version detection subsystem described in Chapter 7, Service and Application Version Detection.
+
 也就是有一个数据库,提供verson scan,在open|filtered之前缩小范围
+
 >If any of the probes elicit a response from an open|filtered port, the state is changed to open.
 
 
 这里udp通过网关的53端口的dnsmask服务程序模拟端口。
+
 ### 脚本函数
 ```python
 def UDPScan(ip,port):
