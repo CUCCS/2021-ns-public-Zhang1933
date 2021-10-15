@@ -1,6 +1,6 @@
 * [实验环境](#实验环境)
-* [网络拓扑：](#网络拓扑：)
-* [端口状态模拟：](#端口状态模拟：)
+* [网络拓扑](#网络拓扑)
+* [端口状态模拟](#端口状态模拟)
 * [脚本使用](#脚本使用)
 * [TCP connect scan](#tcp-connect-scan)
   * [API函数](#api函数)
@@ -8,34 +8,35 @@
   * [端口不可达](#端口不可达)
   * [目标端口为过滤状态](#目标端口为过滤状态)
 * [TCP stealthy scan](#tcp-stealthy-scan)
-  * [脚本函数:](#脚本函数:)
+  * [脚本函数](#脚本函数)
   * [端口开放状态](#端口开放状态)
   * [端口不可达状态](#端口不可达状态)
   * [端口过滤状态](#端口过滤状态)
 * [TCP Xmas scan](#tcp-xmas-scan)
-  * [脚本函数:](#脚本函数:)
+  * [脚本函数](#脚本函数)
   * [端口开放状态](#端口开放状态)
   * [端口不可达状态](#端口不可达状态)
   * [端口过滤状态](#端口过滤状态)
 * [TCP fin scan](#tcp-fin-scan)
-  * [脚本函数:](#脚本函数:)
+  * [脚本函数](#脚本函数)
   * [端口开放状态](#端口开放状态)
   * [端口不可达状态](#端口不可达状态)
   * [端口过滤状态](#端口过滤状态)
 * [TCP null scan](#tcp-null-scan)
-  * [脚本函数:](#脚本函数:)
+  * [脚本函数](#脚本函数)
   * [端口开放状态](#端口开放状态)
   * [端口不可达状态](#端口不可达状态)
   * [端口过滤状态](#端口过滤状态)
 * [UDP scan](#udp-scan)
-  * [脚本函数:](#脚本函数:)
+  * [脚本函数](#脚本函数)
   * [端口开放状态](#端口开放状态)
   * [端口关闭状态](#端口关闭状态)
   * [端口过滤状态](#端口过滤状态)
-* [课后题:](#课后题:)
+* [课后题](#课后题)
   * [通过本章网络扫描基本原理的学习，试推测应用程序版本信息的扫描原理，和网络漏洞的扫描原理。](#通过本章网络扫描基本原理的学习，试推测应用程序版本信息的扫描原理，和网络漏洞的扫描原理。)
   * [网络扫描知识库的构建方法有哪些？](#网络扫描知识库的构建方法有哪些？)
 * [参考资料](#参考资料)
+
 # 基于 Scapy 编写端口扫描器
 ## 实验环境
 * VirtualBox 6.1.26
@@ -43,9 +44,9 @@
 * 网关：Debian 10 (内部网络1)
 * 靶机: kali 2021.2 （内部网络1）
 
-## 网络拓扑：
+## 网络拓扑
 ![./img/Nettopu.png](./img/Nettopu.png)
-## 端口状态模拟：
+## 端口状态模拟
 * TCP开放：python http.server,开放在8000端口
 * TCP端口关闭：关闭python http.server服务
 * TCP端口过滤:开启ufw,用ufw编写过滤规则
@@ -93,8 +94,10 @@ def TCPConnect(ip,port):
 ![./img/TcpConnectPortOpenStatus.png](./img/TcpConnectPortOpenStatus.png)
 
 * 攻击者脚本输出结果：
+
 ![./img/TcpConnectPortOpenResult.png](./img/TcpConnectPortOpenResult.png)
 * tcp流可视化：
+
 ![./img/TcpConnectPortOpenFlow.png](./img/TcpConnectPortOpenFlow.png)
 靶机端口开放状态,返回了syn,ack包。
 
@@ -102,26 +105,33 @@ def TCPConnect(ip,port):
 
 ### 端口不可达
 * 关闭python http.server,8000端口关闭
+
 ![./img/TcpConnectPortCloseStatus.png](./img/TcpConnectPortCloseStatus.png)
 * 攻击者脚本输出结果:
+
 ![./img/TcpConnectPortCloseResult.png](./img/TcpConnectPortCloseResult.png)
 * TCP流：
+
 ![./img/TcpConnectPortCloseFlow.png](./img/TcpConnectPortCloseFlow.png)
 跟课本上所说的一致。
 ### 目标端口为过滤状态
 * 开一个python http.server,8000 端口开放,ufw 开启过滤规则：
+
 ![./img/TcpConnectPortFliterStatus.png](./img/TcpConnectPortFliterStatus.png)
 * 攻击者脚本输出结果：
+
 ![./img/TcpConnectPortFilterResult.png](./img/TcpConnectPortFilterResult.png)
 * TCP 流
+
 发送的3个syn包没有一个回复的。与理论相符。
 ![./img/TcpConnectPortFilterFlow.png](./img/TcpConnectPortFilterFlow.png)
 
 ## TCP stealthy scan 
+
 原理参考课本上以及[nmap上扫描这部分的图](https://nmap.org/book/synscan.html)：
 ![./img/TcpStealthyTheory.png](./img/TcpStealthyTheory.png)
 
-### 脚本函数:
+### 脚本函数
 ```python
 def TcpStealthy(ip,port):
     """
@@ -143,6 +153,7 @@ def TcpStealthy(ip,port):
 
 ```
 ### 端口开放状态
+
 ![./img/TcpStealthyPortStatus.png](./img/TcpStealthyPortOpenStatus.png)
 
 * 攻击者脚本输出结果：
@@ -154,21 +165,30 @@ def TcpStealthy(ip,port):
 关闭8000端口上的http.server
 ![./img/TcpStealthyPortCloseStatus.png](./img/TcpStealthyPortCloseStatus.png)
 * 攻击者脚本输出结果：
+
 ![./img/TcpConnectPortCloseResult.png](./img/TcpConnectPortCloseResult.png)
+
 * TCP流：
+
 ![./img/TcpStealthyPortCloseFlow.png](./img/TcpStealthyPortCloseFlow.png)
+
 和课本中理论一样。
 ### 端口过滤状态
 开启过滤规则，开启http.server
+
 ![./img/TcpStealthyPortFilterStatus.png](./img/TcpStealthyPortFilterStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/TcpStealthyPortFilterResult.png](./img/TcpStealthyPortFilterResult.png)
+
 * TCP流：
+
 ![./img/TcpStealthyPortFilterFlow.png](./img/TcpStealthyPortFilterFlow.png)
 
 ## TCP Xmas scan 
 扫描
-### 脚本函数:
+### 脚本函数
 ```python
 def TCPXmas(ip,port):
     """
@@ -188,30 +208,47 @@ def TCPXmas(ip,port):
 
 ```
 ### 端口开放状态
+
 ![./img/XmasPortStatus.png](./img/XmasPortStatus.png)
 
 * 攻击者脚本输出结果：
+
 ![./img/XmasPortOpenResualt.png](./img/XmasPortOpenResualt.png)
+
 * TCP流：
+
 ![./img/XmasPortOpenFlow.png](./img/XmasPortOpenFlow.png)
+
 ### 端口不可达状态
 关闭http.server
+
 ![./img/XmasPortCloseStatus.png](./img/XmasPortCloseStatus.png)
 
 * 攻击者脚本输出结果：
+
 ![./img/XmasPortCloseResult.png](./img/XmasPortCloseResult.png)
+
 * TCP流：
+
 ![./img/XmasPortCloseFlow.png](./img/XmasPortCloseFlow.png)
+
 ### 端口过滤状态
+
 ![./img/XmasPortFilterStatus.png](./img/XmasPortFilterStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/XmasPortFilterResult.png](./img/XmasPortFilterResult.png)
+
 * TCP流：
+
 ![./img/XmasPortFilterFlow.png](./img/XmasPortFilterFlow.png)
+
 没啥毛病。
+
 ## TCP fin scan 
 
-### 脚本函数:
+### 脚本函数
 ```python
 def TCPFin(ip,port):
     """
@@ -231,28 +268,45 @@ def TCPFin(ip,port):
 
 ```
 ### 端口开放状态
+
 ![./img/FinPortOpenStatus.png](./img/FinPortOpenStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/FinPortOpenResult.png](./img/FinPortOpenResult.png)
+
 * TCP流：
+
 ![./img/FinPortOpenFlow.png](./img/FinPortOpenFlow.png)
+
 ### 端口不可达状态
+
 ![./img/FinPortCloseStatus.png](./img/FinPortCloseStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/FinPortCloseResult.png](./img/FinPortCloseResult.png)
+
 * TCP流：
+
 ![./img/FinPortCloseFlow.png](./img/FinPortCloseFlow.png)
+
 ### 端口过滤状态
+
 ![./img/FinPortFilterStatus.png](./img/FinPortFilterStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/FinPortFilterResult.png](./img/FinPortFilterResult.png)
+
 * TCP流：
+
 ![./img/FinPortFilterFlow.png](./img/FinPortFilterFlow.png)
 
 跟理论相符
 ## TCP null scan
 
-### 脚本函数:
+### 脚本函数
 ```python
 def TCPNull(ip,port):
     """
@@ -272,30 +326,52 @@ def TCPNull(ip,port):
 
 ```
 ### 端口开放状态
+
 ![./img/NullPortOpenStatus.png](./img/NullPortOpenStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/NullPortOpenResult.png](./img/NullPortOpenResult.png)
+
 * TCP流：
+
 发现可视化的TCP流wireshark打开查看图表直接报错：
+
 ![./img/NullPortOpenFlow.png](./img/NullPortOpenFlow.png)
+
 应该跟flag设置成空值有关
+
 * wireshark 抓包结果： 
+
 ![./img/NullPortOpenCap.png](./img/NullPortOpenCap.png)
 
 ### 端口不可达状态
+
 ![./img/NullPortCloseStatus.png](./img/NullPortCloseStatus.png)
 * 攻击者脚本输出结果：
+
 ![./img/NullPortCloseResult.png](./img/NullPortCloseResult.png)
+
 * wireshark抓包结果：
+
 ![./img/NullPortCloseCap.png](./img/NullPortCloseCap.png)
+
 ### 端口过滤状态
+
 ![./img/NullPortFilterStatus.png](./img/NullPortFilterStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/NullPortFilterResult.png](./img/NullPortFilterResult.png)
+
 * 抓包结果：
+
 ![./img/NullPortFilterCap.png](./img/NullPortFilterCap.png)
+
 没毛病
+
 ## UDP scan
+
 [参考nmap这部分的内容](https://nmap.org/book/scan-methods-udp-scan.html)
 * 返回一个UDP包，说明端口为开放状态(unusual)
 * ICMP type 3,code 3 说明端口为关闭状态 
@@ -312,7 +388,7 @@ nmap还会根据特殊协议构造数据包，而不是简单构造空payload:
 
 
 这里udp通过网关的53端口的dnsmask服务程序模拟端口。
-### 脚本函数:
+### 脚本函数
 ```python
 def UDPScan(ip,port):
     """
@@ -336,33 +412,55 @@ def UDPScan(ip,port):
     return -3
 ```
 ### 端口开放状态
+
 ![./img/UdpPortOpenStatus.png](./img/UdpPortOpenStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/UdpPortOpenResult.png](./img/UdpPortOpenResult.png)
+
 * 传输流：
+
 ![./img/UdpPortOpenCap.png](./img/UdpPortOpenCap.png)
+
 ### 端口关闭状态
+
 随便选一个网关上关闭的端口
+
 ![./img/UdpPortCloseStatus.png](./img/UdpPortCloseStatus.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/UdpPortCloseResult.png](./img/UdpPortCloseResult.png)
+
 * 传输流：
+
 ![./img/UdpPortCloseFlow.png](./img/UdpPortCloseFlow.png)
+
 ### 端口过滤状态
+
 ![./img/UdpPortFilterStatuspng.png](./img/UdpPortFilterStatuspng.png)
+
 * 攻击者脚本输出结果：
+
 ![./img/UdpPortFilterResult.png](./img/UdpPortFilterResult.png)
+
 * 传输流：
+
 ![./img/UdpPortFilterCap.png](./img/UdpPortFilterCap.png)
 
 面对防火墙,nmap的建议是：
+
 > If you can bypass that problem by launching the scan from behind the firewall rather than across it, do so.
-## 课后题:
+## 课后题
+
 ### 通过本章网络扫描基本原理的学习，试推测应用程序版本信息的扫描原理，和网络漏洞的扫描原理。
+
 &ensp;&ensp;简单的说：就是模拟不同的环境,在该环境上给定不同的输入,然后总结出不同情况的输出来构建知识库。扫描时，根据构造的输入、得到的输出查知识库表推断。
 &ensp;&ensp;虽然协议大的方向是定的，但协议仍然有细枝末节的地方没有定义，不同的人实现协议会有不同的处理方式，或者干脆不处理。
 &ensp;&ensp;如果知道了应用程序版本信息，发现其是开源程序，那么就直接进行源代码级别的分析。
 ### 网络扫描知识库的构建方法有哪些？
+
 &ensp;&ensp;在一个测试环境上模拟出一个环境，然后,黑盒测试。
 &ensp;&ensp;分析一些开源的网站架构。
 
